@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button clear (click)="dismissModal()">Fermer</button>
+    </ion-buttons>
+    <ion-title>LendCDPage</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button ion-item [color]="cd.estprete ? 'secondary':'danger'">
+      {{cd.titre}} : {{cd.chanteur}}
+    </button>
+  </ion-list>  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="danger" [disabled]="!cd.estprete" (click)="OnToggleCD()">preter</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="secondary" [disabled]="cd.estprete" (click)="OnToggleCD()">rendre</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

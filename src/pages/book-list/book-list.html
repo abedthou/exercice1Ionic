@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>BookListPage</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let livre of livreList; 
+    let i = index" (click)="OnLoadBook(i)" [color]="livre.estprete ? 'secondary':'danger'">
+      {{livre.titre}}:  {{livre.auteur}}
+    </button>
+  </ion-list>
+</ion-content>

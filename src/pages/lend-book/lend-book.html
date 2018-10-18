@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons>
+      <button ion-button clear (click)="dismissModal()">Fermer</button>
+    </ion-buttons>
+    <ion-title>LendBookPage</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button ion-item [color]="livre.estprete ? 'secondary':'danger'">
+      {{livre.titre}} : {{livre.auteur}}
+    </button>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="danger" [disabled]="!livre.estprete" (click)="OnToggleBook()">preter</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button full color="secondary" [disabled]="livre.estprete" (click)="OnToggleBook()">rendre</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
